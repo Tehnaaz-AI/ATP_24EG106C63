@@ -13,4 +13,4 @@ This repository contains daily JavaScript assignments completed as part of a tra
 Each folder represents one day of assignments.
 
 ## Author
-Your Name
+Tehnaaz Fathima
