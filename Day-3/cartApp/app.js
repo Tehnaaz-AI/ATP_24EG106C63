@@ -22,7 +22,7 @@ console.log(getAllProducts());
 
 // 2. Search for products
 console.log('\nSearching for "phone":');
-console.log(searchProducts('phone'));
+console.log(searchProducts('Phone'));
 
 // 3. Add items to cart
 console.log('\n=== Adding to Cart ===');

@@ -11,7 +11,12 @@ const products = [
 // TODO: Implement these functions
 
 export function getProductById(id) {
-    return products.filter(proObj=>proObj.id==id)
+    for(let product of products){
+    {
+        if (product.id==id){
+            return product
+        }
+    }}
 // Find and return product by ID
 }
 
@@ -27,18 +32,23 @@ return products.filter(proObj=>proObj.category==category)
 
 export function searchProducts(query) {
 // Search products by name (case-insensitive)
-return products.filter(proObj=>proObj.name===query)
+return products.find(proObj=>proObj.name===query)
 }
 
 export function checkStock(productId, quantity) {
 // Check if product has enough stock
-return products.filter(proObj=>proObj.id==productId && proObj.stock==quantity)
+let stock=products.filter(proObj=>proObj.id==productId && proObj.stock==quantity)
+if(stock!=null){
 // Return true/false
+return true}
+return false
 }
 
 export function reduceStock(productId, quantity) {
 // Reduce product stock after purchase
- products=products.map(proObj=>{
-    if(proObj.id===productId)
-        return proObj.stock-quantity
-})
+for(let i=0;i<products.length;i++){
+    if(products[i].id==productId){
+      products[i].stock-=1
+    }
+}
+}
