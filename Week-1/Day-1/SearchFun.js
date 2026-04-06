@@ -1,4 +1,4 @@
-function search(arr,a)
+function search(arr,a) // function to find the index of element (if exists)
 {
     for(let i=0;i<arr.length;i++)
     {

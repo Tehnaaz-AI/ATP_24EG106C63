@@ -1,4 +1,4 @@
-function arrSum(arr)
+function arrSum(arr) // finding the sum of the elements of array
 {
     for(let i=0;i<arr.length;i++)
     {

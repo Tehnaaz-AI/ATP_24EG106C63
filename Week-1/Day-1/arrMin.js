@@ -4,7 +4,7 @@ for(let i=0;i<marks.length;i++)
     {
         if(min>marks[i])
         {
-            min=marks[i]
+            min=marks[i] // updating min
         }
     }
     console.log("smallest element is: ",min)

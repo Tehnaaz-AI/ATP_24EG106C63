@@ -1,4 +1,4 @@
-function big3(a,b,c)
+function big3(a,b,c) // function to print biggest of 3 numbers
 {
     if(a>b && a>c)
    {
@@ -19,5 +19,5 @@ function big3(a,b,c)
 let a=10
 let b=7
 let c=25
-big3(a,b,c)
+big3(a,b,c) 
 
