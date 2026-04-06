@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { userContextObj } from "./ContextProvider";
+import UserCount from "./UserCount";
 
-function Users({ onAddUser }) {
+function Users() {
   const [users, setUsers] = useState([]);
+  const { increment } = useContext(userContextObj);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -11,35 +14,37 @@ function Users({ onAddUser }) {
   }, []);
 
   return (
-    <div className="bg-pink-400 min-h-screen flex justify-center items-center">
-      
-      {/* Outer Box */}
-      <div className="border-4 border-black rounded-3xl p-10 bg-pink-300">
-        
-        {/* ONE ROW */}
-        <div className="flex gap-6">
-          
-          {users.map((user, index) => (
-            <div
-              key={user.id}
-              className="text-center p-5 border-4 text-xl bg-green-300 border-blue-700 rounded-2xl w-60"
+    <div className="min-h-screen p-50 bg-red-500 ">
+
+      {/* User Count (inside same main div) */}
+
+      <div className="flex justify-center w-full">
+        <UserCount />
+      </div>
+
+      {/* Cards Row */}
+      <div className="flex gap-6 mt-10">
+        {users.map((user, index) => (
+          <div
+            key={user.id}
+            className="bg-green-300 rounded-2xl border-4 border-amber-500 p-5 text-center w-60"
+          >
+            <h1 className="font-bold text-lg">
+              User-{index + 1}
+            </h1>
+
+            <p className="text-black-600 mt-2 font-medium">
+              {user.name}
+            </p>
+
+            <button
+              onClick={increment}
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600"
             >
-              <h2 className="font-bold font-serif">
-                User-{index + 1}
-              </h2>
-
-              <p className="text-sm">{user.name}</p>
-
-              <button
-                onClick={onAddUser}
-                className="bg-blue-600 text-white px-4 py-2 rounded-xl mt-3"
-              >
-                Add User
-              </button>
-            </div>
-          ))}
-
-        </div>
+              Add User
+            </button>
+          </div>
+        ))}
       </div>
 
     </div>
