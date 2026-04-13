@@ -1,7 +1,7 @@
-GET http://atp-24eg106c63.onrender.com/abcd
+GET https://atp-24eg106c63.onrender.com/abcd
 
 ### Register User
-POST http://atp-24eg106c63.onrender.com/auth/users
+POST https://atp-24eg106c63.onrender.com/auth/users
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### User Login
-POST http://atp-24eg106c63.onrender.com/auth/login
+POST https://atp-24eg106c63.onrender.com/auth/login
 Content-Type: application/json
 
 {
@@ -24,13 +24,13 @@ Content-Type: application/json
 
 
 ###User LogOut
-GET http://atp-24eg106c63.onrender.com/auth/logout
+GET https://atp-24eg106c63.onrender.com/auth/logout
 
 ### Read Articles of all Users
-GET http://atp-24eg106c63.onrender.com/user-api/articles
+GET https://atp-24eg106c63.onrender.com/user-api/articles
 
 ### Add comment by user to an article
-PUT http://atp-24eg106c63.onrender.com/user-api/articles
+PUT https://atp-24eg106c63.onrender.com/user-api/articles
 Content-Type: application/json
 
 {
@@ -40,7 +40,7 @@ Content-Type: application/json
 
 
 ### change password
-PUT http://atp-24eg106c63.onrender.com/auth/password
+PUT https://atp-24eg106c63.onrender.com/auth/password
 Content-Type: application/json
 
 {

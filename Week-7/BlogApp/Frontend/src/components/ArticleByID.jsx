@@ -18,9 +18,9 @@ function ArticleByID() {
   const [error, setError] = useState(null);
 
   const getBaseURL = () => {
-    if (user?.role === "ADMIN") return "http://atp-24eg106c63.onrender.com/admin-api";
-    if (user?.role === "AUTHOR") return "http://atp-24eg106c63.onrender.com/author-api";
-    return "http://atp-24eg106c63.onrender.com/user-api";
+    if (user?.role === "ADMIN") return "https://atp-24eg106c63.onrender.com/admin-api";
+    if (user?.role === "AUTHOR") return "https://atp-24eg106c63.onrender.com/author-api";
+    return "https://atp-24eg106c63.onrender.com/user-api";
   };
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function ArticleByID() {
 
     try {
       const res = await axios.patch(
-        "http://atp-24eg106c63.onrender.com/author-api/articles",
+        "https://atp-24eg106c63.onrender.com/author-api/articles",
         { articleId: article._id, isArticleActive: newStatus },
         { withCredentials: true }
       );
@@ -85,7 +85,7 @@ function ArticleByID() {
     commentObj.articleId = article._id;
 
     let res = await axios.put(
-      "http://atp-24eg106c63.onrender.com/user-api/articles",
+      "https://atp-24eg106c63.onrender.com/user-api/articles",
       commentObj,
       { withCredentials: true }
     );
