@@ -12,10 +12,22 @@ config();
 //create express app
 const app = exp();
 //enable cors
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://atp-24-eg-106-c63-y11o.vercel.app',
+  'https://atp-24-eg-106-c63-y11o-pq327rb14-24eg106c63-5169s-projects.vercel.app'
+];
+
 app.use(cors({
-  origin:['http://localhost:5173','https://atp-24-eg-106-c63-y11o-pq327rb14-24eg106c63-5169s-projects.vercel.app'],
-  credentials:true
-}))
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Blocked by CORS"));
+    }
+  },
+  credentials: true
+}));
 //add cookie parser middeleware
 app.use(cookieParser())
 //body parser middleware
