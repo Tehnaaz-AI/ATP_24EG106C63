@@ -14,7 +14,7 @@ function UserList() {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:4000/admin-api/users",
+        "http://https://atp-24eg106c63.onrender.com/admin-api/users",
         { withCredentials: true }
       );
 
@@ -30,7 +30,7 @@ function UserList() {
   const deleteUser = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:4000/admin-api/users/${id}`,
+        `http://https://atp-24eg106c63.onrender.com/admin-api/users/${id}`,
         { withCredentials: true }
       );
 

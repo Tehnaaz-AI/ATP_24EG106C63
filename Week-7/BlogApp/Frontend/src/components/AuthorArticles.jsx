@@ -33,7 +33,7 @@ function AuthorArticles() {
       try {
         setLoading(true);
         //read articles of current author
-        let res = await axios.get("http://localhost:4000/author-api/articles", { withCredentials: true });
+        let res = await axios.get("http://https://atp-24eg106c63.onrender.com/author-api/articles", { withCredentials: true });
         if (res.status === 200) {
           setArticles(res.data.payload);
         }
@@ -86,22 +86,22 @@ function AuthorArticles() {
           >
             {article.isArticleActive ? "ACTIVE" : "DELETED"}
           </span>
-  
+
           <div className="flex flex-col gap-2">
             <p className={`${articleMeta} !text-purple-400`}>
               {article.category}
             </p>
-  
+
             <p className={`${articleTitle} !text-fuchsia-800`}>
               {article.title}
             </p>
-  
+
             {/* FIXED OVERFLOW */}
             <p className={`${articleExcerpt} break-words !text-gray-600`}>
               {article.content.slice(0, 60)}...
             </p>
           </div>
-  
+
           <button
             className={`${ghostBtn} mt-auto pt-4 !text-fuchsia-700 hover:!text-fuchsia-900`}
             onClick={() => openArticle(article)}

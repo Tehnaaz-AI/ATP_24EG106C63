@@ -15,7 +15,7 @@ function Articles() {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:4000/admin-api/articles",
+        "http://https://atp-24eg106c63.onrender.com/admin-api/articles",
         { withCredentials: true }
       );
 
@@ -31,7 +31,7 @@ function Articles() {
   const deleteArticle = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:4000/admin-api/articles/${id}`,
+        `http://https://atp-24eg106c63.onrender.com/admin-api/articles/${id}`,
         { withCredentials: true }
       );
 

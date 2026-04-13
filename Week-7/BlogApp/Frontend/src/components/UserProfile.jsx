@@ -28,9 +28,9 @@ function UserProfile() {
       setLoading(true);
       try {
         //read articles of all authors
-        let res=await axios.get("http://localhost:4000/user-api/articles",{withCredentials:true})
+        let res = await axios.get("http://https://atp-24eg106c63.onrender.com/user-api/articles", { withCredentials: true })
         //update articles state
-        if(res.status===200){
+        if (res.status === 200) {
           setArticles((await res).data.payload)
         }
       } catch (err) {
@@ -70,16 +70,16 @@ function UserProfile() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-10 bg-gradient-to-br from-purple-100 via-white to-fuchsia-100 min-h-screen">
-      
+
       {/* ERROR */}
       {error && <p className={`${errorClass}`}>{error}</p>}
-  
+
       {/* PROFILE HEADER */}
       <div className="!bg-fuchsia-800 !text-white rounded-3xl p-6 mb-8 flex items-center justify-between">
-        
+
         {/* LEFT */}
         <div className="flex items-center gap-4">
-          
+
           {/* Avatar */}
           {currentUser?.profileImageUrl ? (
             <img
@@ -92,14 +92,14 @@ function UserProfile() {
               {currentUser?.firstName?.charAt(0).toUpperCase()}
             </div>
           )}
-  
+
           {/* Name */}
           <div>
             <p className="text-sm text-purple-200">Welcome back</p>
             <h2 className="text-xl font-semibold text-white">{currentUser?.firstName}</h2>
           </div>
         </div>
-  
+
         {/* LOGOUT */}
         <button
           className="bg-white text-fuchsia-800 text-sm px-5 py-2 rounded-full hover:bg-purple-100 transition"
@@ -108,11 +108,11 @@ function UserProfile() {
           Logout
         </button>
       </div>
-  
+
       {/* ARTICLES SECTION */}
       <div className="mt-4">
         <h3 className="text-lg font-semibold text-fuchsia-800 mb-4">Latest Articles</h3>
-  
+
         {/* EMPTY STATE */}
         {articles.length === 0 ? (
           <p className="text-purple-400 text-sm text-center py-10">No articles available yet</p>
@@ -121,20 +121,20 @@ function UserProfile() {
             {articles.map((articleObj) => (
               <div className={`${articleCardClass} border-fuchsia-400 border-4 !rounded-3xl !bg-white/90`} key={articleObj._id}>
                 <div className="flex flex-col h-full">
-                  
+
                   {/* TOP */}
                   <div>
                     <p className={`${articleTitle} !text-fuchsia-800`}>{articleObj.title}</p>
-  
+
                     <p className="text-sm text-gray-600 mt-1 break-words">
                       {articleObj.content.slice(0, 80)}...
                     </p>
-  
+
                     <p className={`${timestampClass} mt-2 !text-purple-400`}>
                       {formatDateIST(articleObj.createdAt)}
                     </p>
                   </div>
-  
+
                   {/* ACTION */}
                   <button
                     className={`${ghostBtn} mt-auto pt-4 !text-fuchsia-700 hover:!text-fuchsia-900`}

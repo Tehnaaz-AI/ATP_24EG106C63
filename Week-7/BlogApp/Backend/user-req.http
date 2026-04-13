@@ -1,7 +1,7 @@
-GET http://localhost:4000/abcd
+GET http://https://atp-24eg106c63.onrender.com/abcd
 
 ### Register User
-POST http://localhost:4000/auth/users
+POST http://https://atp-24eg106c63.onrender.com/auth/users
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### User Login
-POST http://localhost:4000/auth/login
+POST http://https://atp-24eg106c63.onrender.com/auth/login
 Content-Type: application/json
 
 {
@@ -24,13 +24,13 @@ Content-Type: application/json
 
 
 ###User LogOut
-GET http://localhost:4000/auth/logout
+GET http://https://atp-24eg106c63.onrender.com/auth/logout
 
 ### Read Articles of all Users
-GET http://localhost:4000/user-api/articles
+GET http://https://atp-24eg106c63.onrender.com/user-api/articles
 
 ### Add comment by user to an article
-PUT http://localhost:4000/user-api/articles
+PUT http://https://atp-24eg106c63.onrender.com/user-api/articles
 Content-Type: application/json
 
 {
@@ -40,7 +40,7 @@ Content-Type: application/json
 
 
 ### change password
-PUT http://localhost:4000/auth/password
+PUT http://https://atp-24eg106c63.onrender.com/auth/password
 Content-Type: application/json
 
 {
