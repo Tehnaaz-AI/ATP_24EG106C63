@@ -14,7 +14,7 @@ function AuthorList() {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://https://atp-24eg106c63.onrender.com/admin-api/authors",
+        "http://atp-24eg106c63.onrender.com/admin-api/authors",
         { withCredentials: true }
       );
 
@@ -31,7 +31,7 @@ function AuthorList() {
   const deleteAuthor = async (id) => {
     try {
       await axios.delete(
-        `http://https://atp-24eg106c63.onrender.com/admin-api/authors/${id}`,
+        `http://atp-24eg106c63.onrender.com/admin-api/authors/${id}`,
         { withCredentials: true }
       );
 
