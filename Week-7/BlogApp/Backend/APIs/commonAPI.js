@@ -60,9 +60,12 @@ commonApp.post("/users", upload.single("profileImageUrl"), async (req, res,next)
 
 //Route for Login(USER, AUTHOR and ADMIN)
 commonApp.post("/login", async (req, res) => {
-  //console.log(req.body)
+  console.log(req.body)
   //get user cred obj
-  const { email, password } = req.body;
+  const { email, password } = req.body || {};
+  if (!email || !password) {
+    return res.status(400).json({ message: "Missing credentials" });
+  }
   //find user by email
   const user = await UserModel.findOne({ email: email });
   //if use not found
