@@ -59,7 +59,7 @@ commonApp.post("/users", upload.single("profileImageUrl"), async (req, res,next)
 });
 
 //Route for Login(USER, AUTHOR and ADMIN)
-commonApp.post("/login", async (req, res) => {
+commonApp.post("/login", async (req, res,next) => {
   console.log(req.body)
   //get user cred obj
   const { email, password } = req.body || {};
