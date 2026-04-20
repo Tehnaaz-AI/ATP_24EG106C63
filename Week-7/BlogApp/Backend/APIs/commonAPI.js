@@ -59,67 +59,74 @@ commonApp.post("/users", upload.single("profileImageUrl"), async (req, res,next)
 });
 
 //Route for Login(USER, AUTHOR and ADMIN)
-commonApp.post("/login", async (req, res,next) => {
-  console.log(req.body)
-  //get user cred obj
-  const { email, password } = req.body || {};
-  if (!email || !password) {
-    return res.status(400).json({ message: "Missing credentials" });
-  }
-  //find user by email
-  const user = await UserModel.findOne({ email: email });
-  //if use not found
-  if (!user) {
-    return res.status(400).json({ message: "Invalid email" });
-  }
-  //compare password
-  const isMatched = await compare(password, user.password);
-  //if passwords not matched
-  if (!isMatched) {
-    return res.status(400).json({ message: "Invalid password" });
-  }
-  //create jwt
-  const signedToken = sign(
-    {
-      id: user._id,
-      email: email,
-      role: user.role,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      profileImageUrl: user.profileImageUrl,
-    },
-    process.env.SECRET_KEY,
-    {
-      expiresIn: "1h",
-    },
-  );
+commonApp.post("/login", async (req, res, next) => {
+  try {
+    console.log("LOGIN BODY:", req.body);
 
-  //set token to res header as httpOnly cookie
-  res.cookie("token", signedToken, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
-  });
-  //remove password from user document
-  let userObj = user.toObject();
-  delete userObj.password;
+    const { email, password } = req.body;
 
-  //send res
-  res.status(200).json({ message: "login success", payload: userObj });
+    // check if user exists
+    const user = await UserModel.findOne({ email });
+    console.log("USER FOUND:", user);
+
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email" });
+    }
+
+    // compare password
+    const isMatched = await compare(password, user.password);
+    console.log("PASSWORD MATCH:", isMatched);
+
+    if (!isMatched) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+
+    // create JWT
+    const signedToken = sign(
+      {
+        id: user._id,
+        email: user.email,
+        role: user.role,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        profileImageUrl: user.profileImageUrl,
+      },
+      process.env.SECRET_KEY,
+      { expiresIn: "1h" }
+    );
+
+    // ✅ FIXED COOKIE
+    res.cookie("token", signedToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
+
+    // remove password
+    let userObj = user.toObject();
+    delete userObj.password;
+
+    res.status(200).json({
+      message: "login success",
+      payload: userObj,
+    });
+
+  } catch (err) {
+    console.log("LOGIN ERROR:", err);
+    next(err);
+  }
 });
 
 //Route for Logout
 commonApp.get("/logout", (req, res) => {
-  //delete token from cookie storage
   res.clearCookie("token", {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "None",
   });
-  //send res
+
   res.status(200).json({ message: "Logout success" });
 });
-
 //Page refresh
 commonApp.get("/check-auth", verifyToken("USER", "AUTHOR", "ADMIN"), (req, res) => {
   res.status(200).json({
