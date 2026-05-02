@@ -37,6 +37,7 @@ function Articles() {
 
       // instant UI update
       setArticles((prev) => prev.filter((a) => a._id !== id));
+      navigate("/profile");
     } catch (err) {
       console.log(err);
     }
