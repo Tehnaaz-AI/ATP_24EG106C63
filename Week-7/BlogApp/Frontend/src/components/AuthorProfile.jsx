@@ -37,7 +37,7 @@ function AuthorProfile() {
           )}
   
           <div>
-            <p className="text-sm text-purple-200">Welcome back</p>
+            <p className="text-sm text-purple-200">Welcome back Author!</p>
             <h2 className="text-xl font-semibold text-white">
               {currentUser?.firstName}
             </h2>
