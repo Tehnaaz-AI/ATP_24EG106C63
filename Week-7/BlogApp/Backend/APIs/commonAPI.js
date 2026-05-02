@@ -15,7 +15,7 @@ config();
 commonApp.post("/users", upload.single("profileImageUrl"), async (req, res,next) => {
   let cloudinaryResult;
   try {
-    let allowedRoles = ["USER", "AUTHOR"];
+    let allowedRoles = ["USER", "AUTHOR","ADMIN"];
     //get user from req
     const newUser = req.body;
     console.log(newUser);
