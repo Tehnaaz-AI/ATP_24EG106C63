@@ -11,7 +11,7 @@ const app = exp()
 
 //add cors
 app.use(cors({
-  origin:["http://localhost:5173"]
+  origin:["http://localhost:5173","https://employeeproject-teal.vercel.app/"]
 }))
 
 // middleware

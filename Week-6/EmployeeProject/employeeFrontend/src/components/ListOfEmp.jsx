@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { counterContextObj } from '../Context/contextProvider'
@@ -6,16 +6,16 @@ import { counterContextObj } from '../Context/contextProvider'
 function ListOfEmp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const {counter,changeCounter}=useContext(counterContextObj);
+  const { counter, changeCounter } = useContext(counterContextObj);
 
   const [emps, setEmps] = useState([]);
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   async function getEmps() {
     try {
       setLoading(true)
       setError("")
-      let res = await fetch("http://localhost:4000/employee-api/employees");
+      let res = await fetch("${import.meta.env.VITE_API_URL}/employee-api/employees");
       if (res.status === 200) {
         let resObj = await res.json();
         setEmps(resObj.payload);
@@ -37,7 +37,7 @@ function ListOfEmp() {
       try {
         setLoading(true)
         setError("")
-        let res = await fetch("http://localhost:4000/employee-api/employees");
+        let res = await fetch("${import.meta.env.VITE_API_URL}/employee-api/employees");
         if (res.status === 200) {
           let resObj = await res.json();
           setEmps(resObj.payload);
@@ -55,22 +55,22 @@ function ListOfEmp() {
     getEmps();
   }, []);
 
-  const getEmployee=(empObj)=>{
+  const getEmployee = (empObj) => {
     //navigate to employee along with selected emp obj
-    navigate("/employee",{state:empObj})
+    navigate("/employee", { state: empObj })
   }
 
-  const gotoEditEmp=(empObj)=>{
+  const gotoEditEmp = (empObj) => {
     //navigate to /employee along with empObj
-    navigate("/edit-emp",{state:empObj})
+    navigate("/edit-emp", { state: empObj })
   }
 
-  const deleteEmp=async(id)=>{
+  const deleteEmp = async (id) => {
     try {
       setLoading(true)
       setError("")
-      let res= await axios.delete(`http://localhost:4000/employee-api/employees/${id}`)
-      if(res.status===200){
+      let res = await axios.delete(`${import.meta.env.VITE_API_URL}/employee-api/employees/${id}`)
+      if (res.status === 200) {
         getEmps()
       }
     } catch (err) {
@@ -100,13 +100,13 @@ function ListOfEmp() {
             <p>{empObj.email}</p>
             <p>{empObj.name}</p>
             <div className="flex justify-around pt-3">
-              <button onClick={()=>getEmployee(empObj)} className="bg-white text-pink-600 rounded-2xl p-2">View</button>
-              <button onClick={()=>gotoEditEmp(empObj)} className="bg-white text-pink-600 rounded-2xl p-2">Edit</button>
-              <button onClick={()=>deleteEmp(empObj._id)} className="bg-white text-pink-600 rounded-2xl p-2">Delete</button>
+              <button onClick={() => getEmployee(empObj)} className="bg-white text-pink-600 rounded-2xl p-2">View</button>
+              <button onClick={() => gotoEditEmp(empObj)} className="bg-white text-pink-600 rounded-2xl p-2">Edit</button>
+              <button onClick={() => deleteEmp(empObj._id)} className="bg-white text-pink-600 rounded-2xl p-2">Delete</button>
 
             </div>
           </div>
-        ))} 
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 
 ###
-POST   http://localhost:4000/employee-api/employees
+POST   ${import.meta.env.VITE_API_URL}/employee-api/employees
 Content-Type: application/json
 
 {
@@ -12,10 +12,10 @@ Content-Type: application/json
 }
 
 ###
-GET    http://localhost:4000/employee-api/employees
+GET    ${import.meta.env.VITE_API_URL}/employee-api/employees
 
 ###
-PUT    http://localhost:4000/employee-api/employees/
+PUT    ${import.meta.env.VITE_API_URL}/employee-api/employees/
 
 ###
-DELETE http://localhost:4000/employee-api/employees/69ca1d49e01cf03e0c454c78
+DELETE ${import.meta.env.VITE_API_URL}/employee-api/employees/69ca1d49e01cf03e0c454c78

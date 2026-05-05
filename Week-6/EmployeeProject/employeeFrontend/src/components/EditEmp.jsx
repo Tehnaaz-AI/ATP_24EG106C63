@@ -1,4 +1,4 @@
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import axios from 'axios'
@@ -8,36 +8,36 @@ import { useState } from "react";
 
 const EditEmp = (empObj) => {
 
-const [loading, setLoading] = useState(false);
-const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-const {
-  register,handleSubmit,formState:{errors},setValue
-}=useForm()
+  const {
+    register, handleSubmit, formState: { errors }, setValue
+  } = useForm()
 
-//read state received in navigation
-const {state}=useLocation()
+  //read state received in navigation
+  const { state } = useLocation()
 
-const navigate=useNavigate()
+  const navigate = useNavigate()
 
-useEffect(()=>{
-  setValue("name",state.name)
-  setValue("email",state.email)
-  setValue("mobile",state.mobile)
-  setValue("designation",state.designation)
-  setValue("companyName",state.companyName)
-},[state])
+  useEffect(() => {
+    setValue("name", state.name)
+    setValue("email", state.email)
+    setValue("mobile", state.mobile)
+    setValue("designation", state.designation)
+    setValue("companyName", state.companyName)
+  }, [state])
 
-const  saveModifiedEmp=async (modifiedEmp)=>{
-  //make HTTP PUT req
-  const res= await axios.put(`http://localhost:4000/employee-api/employees/${state._id}`,modifiedEmp)
-  if(res.status===200){
-    navigate("/list",{state:modifiedEmp})
+  const saveModifiedEmp = async (modifiedEmp) => {
+    //make HTTP PUT req
+    const res = await axios.put(`${import.meta.env.VITE_API_URL}/employee-api/employees/${state._id}`, modifiedEmp)
+    if (res.status === 200) {
+      navigate("/list", { state: modifiedEmp })
+    }
   }
-}
 
   return (
-      <div className="border-4 w-150 mx-auto bg-white border-pink-600 rounded-4xl p-5">
+    <div className="border-4 w-150 mx-auto bg-white border-pink-600 rounded-4xl p-5">
       <h1 className="text-5xl font-bold text-center text-pink-600">Edit Employee</h1>
       {/* form */}
       <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(saveModifiedEmp)} >
