@@ -11,14 +11,23 @@ const app = exp()
 
 //add cors
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://employeeproject-teal.vercel.app",
-    "https://employeeproject-dftwgs9lv-24eg106c63-5169s-projects.vercel.app"
-  ],
+  origin: (origin, callback) => {
+    if (
+      !origin ||
+      origin.includes("localhost") ||
+      origin.includes("vercel.app")
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
-}))
+}));
 
+app.options("*", cors());
 
 // middleware
 app.use(cookieParser())
