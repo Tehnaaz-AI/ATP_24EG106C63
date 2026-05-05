@@ -1,0 +1,130 @@
+import { useForm } from "react-hook-form";
+import {
+  pageBackground,
+  formCard,
+  formTitle,
+  formGroup,
+  labelClass,
+  inputClass,
+  submitBtn,
+  errorClass,
+  mutedText,
+  linkClass,
+  loadingClass,
+} from "../styles/common";
+import { NavLink, useNavigate, useLocation } from "react-router";
+import { useAuth } from "../store/authStore";
+import { useEffect } from "react";
+import {toast} from 'react-hot-toast'
+
+function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const navigate = useNavigate();
+  //get state from auth store
+  const { login, currentUser, loading, error, isAuthenticated } = useAuth((state) => state);
+  //on user login
+  const onUserLogin = (userCredObj) => {
+    //call login() of auth store
+    login(userCredObj);
+  };
+
+  useEffect(() => {
+    //navigation logic
+    if (isAuthenticated === true) {
+      if (currentUser.role === "USER") {
+        //show cuccess toast
+        toast.success("Login success and redirecting to User Profile",{duration:2000})
+        navigate("/user-profile");
+      }
+      if (currentUser.role === "AUTHOR") {
+         toast.success("Login success and redirecting to Author Profile",{duration:2000})
+        navigate("/author-profile");
+      }
+      if (currentUser.role === "ADMIN") {
+         toast.success("Login success and redirecting to Admin Profile",{duration:2000})
+        navigate("/admin-profile");
+      }
+    }
+  }, [isAuthenticated]);
+
+  //deal with loading
+  if (loading) {
+    return <p className={loadingClass}>Loading....</p>;
+  }
+
+  return (
+    <div className={`${pageBackground} flex items-center justify-center py-16 px-4`}>
+      
+      <div className={`${formCard} bg-fuchsia-800 text-white rounded-3xl`}>
+        {/* Title */}
+        <h2 className={`${formTitle} text-white`}>Sign In</h2>
+  
+        {/* API error */}
+        {error && <p className={errorClass}>{error}</p>}
+  
+        <form onSubmit={handleSubmit(onUserLogin)}>
+          
+          {/* Email */}
+          <div className={formGroup}>
+            <label className={`${labelClass} !text-purple-200`}>Email</label>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              className={`${inputClass} !bg-white/90 !text-black`}
+              {...register("email", {
+                required: "Email is required",
+                validate: (value) => value.trim().length > 0 || "Email cannot be empty",
+              })}
+            />
+            {errors.email && <p className={errorClass}>{errors.email.message}</p>}
+          </div>
+  
+          {/* Password */}
+          <div className={formGroup}>
+            <label className={`${labelClass} !text-purple-200`}>Password</label>
+            <input
+              type="password"
+              placeholder="••••••••"
+              className={`${inputClass} !bg-white/90 !text-black`}
+              {...register("password", {
+                required: "Password is required",
+                validate: (value) => value.trim().length > 0 || "Password cannot be empty",
+              })}
+            />
+            {errors.password && <p className={errorClass}>{errors.password.message}</p>}
+          </div>
+  
+          {/* Forgot password */}
+          <div className="text-right -mt-2 mb-4">
+            <a href="/forgot-password" className="text-xs text-purple-200 hover:text-white transition">
+              Forgot password?
+            </a>
+          </div>
+  
+          {/* Submit */}
+          <button
+            type="submit"
+            className={`${submitBtn} !bg-white !text-fuchsia-800 hover:!bg-purple-100`}
+          >
+            Sign In
+          </button>
+        </form>
+  
+        {/* Footer */}
+        <p className={`${mutedText} text-center mt-5 !text-purple-200`}>
+          Don't have an account?{" "}
+          <NavLink to="/register" className="text-white font-medium underline">
+            Create one
+          </NavLink>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default Login;

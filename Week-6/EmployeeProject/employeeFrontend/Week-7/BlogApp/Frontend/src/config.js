@@ -1,0 +1,1 @@
+export const BASE_URL = "https://atp-24eg106c63.onrender.com";
