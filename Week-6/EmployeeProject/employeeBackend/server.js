@@ -13,7 +13,8 @@ const app = exp()
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://employeeproject-teal.vercel.app"
+    "https://employeeproject-teal.vercel.app",
+    "https://employeeproject-dftwgs9lv-24eg106c63-5169s-projects.vercel.app"
   ]
 }))
 
