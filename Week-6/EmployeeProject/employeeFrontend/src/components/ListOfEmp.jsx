@@ -15,7 +15,7 @@ function ListOfEmp() {
     try {
       setLoading(true)
       setError("")
-      let res = await fetch("${import.meta.env.VITE_API_URL}/employee-api/employees");
+      let res = await fetch(`${import.meta.env.VITE_API_URL}/employee-api/employees`);
       if (res.status === 200) {
         let resObj = await res.json();
         setEmps(resObj.payload);
