@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-import { counterContextObj } from '../Context/ContextProvider.jsx'
+import { counterContextObj } from '../Context/contextProvider'
 
 
 function CreateEmp() {
@@ -29,7 +29,7 @@ function CreateEmp() {
       });
 
       if (res.status === 201) {
-        //navigate to employees component programmatically
+        //navigate to employees component programatically
         navigate("/list");
       } else {
         let errorRes = await res.json();

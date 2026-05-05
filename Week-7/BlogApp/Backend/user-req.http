@@ -1,0 +1,51 @@
+GET https://atp-24eg106c63.onrender.com/abcd
+
+### Register User
+POST https://atp-24eg106c63.onrender.com/auth/users
+Content-Type: application/json
+
+{
+    "firstName":"User-2",
+    "lastName":"Fathima",
+    "email":"user2@mail.com",
+    "role":"USER",
+    "password":"User2",
+    "profileImageUrl":"abcdefghi"
+}
+
+### User Login
+POST https://atp-24eg106c63.onrender.com/auth/login
+Content-Type: application/json
+
+{
+    "email":"user1@mail.com",
+    "password":"User1"
+}
+
+
+###User LogOut
+GET https://atp-24eg106c63.onrender.com/auth/logout
+
+### Read Articles of all Users
+GET https://atp-24eg106c63.onrender.com/user-api/articles
+
+### Add comment by user to an article
+PUT https://atp-24eg106c63.onrender.com/user-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b4d9bbe1a788b246de006b",
+    "comment":"This is useful article"
+}
+
+
+### change password
+PUT https://atp-24eg106c63.onrender.com/auth/password
+Content-Type: application/json
+
+{
+    "currentPassword":"User1",
+    "newPassword":"User-1"
+}
+
+

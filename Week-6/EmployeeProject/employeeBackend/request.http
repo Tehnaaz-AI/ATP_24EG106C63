@@ -1,0 +1,21 @@
+
+###
+POST   ${import.meta.env.VITE_API_URL}/employee-api/employees
+Content-Type: application/json
+
+{
+  "name": "Boss",
+  "email": "boss@gmail.com",
+  "mobile": "9999999999",
+  "designation": "Manager",
+  "companyName": "ABC Pvt Ltd"
+}
+
+###
+GET    ${import.meta.env.VITE_API_URL}/employee-api/employees
+
+###
+PUT    ${import.meta.env.VITE_API_URL}/employee-api/employees/
+
+###
+DELETE ${import.meta.env.VITE_API_URL}/employee-api/employees/69ca1d49e01cf03e0c454c78

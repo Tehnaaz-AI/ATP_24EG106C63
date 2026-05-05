@@ -1,0 +1,81 @@
+GET http://localhost:4000/user-api/users
+//Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vbnVAbWFpbC5jb20iLCJpYXQiOjE3NzI4NzQxNjYsImV4cCI6MTc3Mjg3Nzc2Nn0.SEWu2fXcGEnLFJjtDP3y-1jR9Mqd6ei4HPjfm7x6glM; Path=/; HttpOnly; SameSite=
+
+### Read a user by id
+GET http://localhost:4000/user-api/user
+
+###
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"Sonu",
+    "password":"Sonu",
+    "email":"sonu@mail.com",
+    "age":21
+}
+
+### user login
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+
+{
+    "email":"sonu@mail.com",
+    "password":"Sonu"
+}
+
+###
+
+PUT http://localhost:4000/user-api/users/69abf115ad4b48ae2567a943
+Content-Type: application/json
+
+{
+    "username":"Sonu",
+    "password":"Sonu",
+    "email":"sonu@mail.com",
+    "age":21
+}
+
+
+###
+
+DELETE http://localhost:4000/user-api/users/69abf115ad4b48ae2567a943
+
+### Add product to user cart
+PUT http://localhost:4000/user-api/cart/product-id/69ab82c9a1a9c22881fa4e08
+
+-------------------------------------------------------------------------------------------------------
+
+//Products
+###
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":2,
+    "productName":"Mobile",
+    "price":65000,
+    "brand":"Samsung"
+}
+
+###
+GET http://localhost:4000/product-api/products
+
+
+###
+GET http://localhost:4000/product-api/products/69ab82c9a1a9c22881fa4e08
+
+###
+
+PUT http://localhost:4000/product-api/products/69aaa9cca284b1a4fd30cc02
+Content-Type: application/json
+
+{
+    "productId":1,
+    "productName":"Phone",
+    "price":70000,
+    "brand":"Apple"
+}
+
+###
+DELETE http://localhost:4000/product-api/products/69aaa9cca284b1a4fd30cc02
