@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import { counterContextObj } from '../Context/contextProvider'
+import { counterContextObj } from '../Context/ContextProvider'
 
 function ListOfEmp() {
   const [loading, setLoading] = useState(false);

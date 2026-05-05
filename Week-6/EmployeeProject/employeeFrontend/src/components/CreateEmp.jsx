@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
-import { counterContextObj } from '../Context/contextProvider'
+import { counterContextObj } from '../Context/ContextProvider'
 
 
 function CreateEmp() {
