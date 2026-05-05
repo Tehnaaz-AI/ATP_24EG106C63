@@ -22,11 +22,16 @@ function CreateEmp() {
     try {
       setLoading(true);
       //make HTTP POST req
-      let res = await fetch("${import.meta.env.VITE_API_URL}/employee-api/employees", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newEmpObj),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/employee-api/employees`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newEmpObj)
+        }
+      );
 
       if (res.status === 201) {
         //navigate to employees component programatically

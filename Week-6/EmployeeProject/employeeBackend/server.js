@@ -15,8 +15,10 @@ app.use(cors({
     "http://localhost:5173",
     "https://employeeproject-teal.vercel.app",
     "https://employeeproject-dftwgs9lv-24eg106c63-5169s-projects.vercel.app"
-  ]
+  ],
+  credentials: true
 }))
+
 
 // middleware
 app.use(cookieParser())
