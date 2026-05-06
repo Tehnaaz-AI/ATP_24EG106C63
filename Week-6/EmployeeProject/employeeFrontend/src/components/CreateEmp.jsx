@@ -60,10 +60,19 @@ function CreateEmp() {
   }
 
   return (
-    <div className="border-4 w-150 mx-auto bg-white border-pink-600 rounded-4xl p-5">
-      <h1 className='text-4xl'>Counter1: {counter1}</h1>
-      <button onClick={changeCounter1} className='bg-amber-400 p-2'>Change</button>
-      <h1 className="text-5xl font-bold text-center text-pink-600">Create New Employee</h1>
+    <div className="flex justify-between items-start px-10 gap-10">
+      <div className="border-4 border-pink-600 w-64 p-4 rounded-2xl flex flex-col items-center gap-4">
+        <h1 className="text-2xl text-center">Counter2: {counter1}</h1>
+        <button
+          onClick={changeCounter1}
+          className="bg-amber-400 px-4 py-2 rounded-3xl font-serif font-bold"
+        >
+          Change
+        </button>
+      </div>
+    <div className="border-4 w-150 mx-auto bg-white border-pink-600 rounded-4xl p-5 ">
+      
+      <h1 className="text-4xl font-bold text-center text-pink-600 font-serif">Create New Employee</h1>
       {/* form */}
       <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(onFormSubmit)}>
         <input
@@ -102,6 +111,7 @@ function CreateEmp() {
           Add Emp
         </button>
       </form>
+    </div>
     </div>
   );
 }

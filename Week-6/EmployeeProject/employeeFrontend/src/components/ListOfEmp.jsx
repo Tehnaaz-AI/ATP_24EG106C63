@@ -90,11 +90,18 @@ function ListOfEmp() {
   }
 
   return (
-    <div className="p-2">
-      <h1 className='text-4xl'>Counter:{counter}</h1>
-      <button onClick={changeCounter} className='bg-amber-400 p-2'>Change</button>
-      <h1 className="text-4xl text-center text-pink-600 font-bold">List of Employees</h1>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5  gap-10">
+    <div>
+      <div className="border-4 border-pink-600 p-4 w-70 rounded-3xl grid place-items-center mx-auto gap-4">
+      <h1 className="text-4xl">Counter1: {counter}</h1>
+      <button
+        onClick={changeCounter}
+        className="bg-amber-400 px-4 py-2 rounded-3xl font-serif font-bold"
+      >
+        Change
+      </button>
+    </div>
+      <h1 className="text-4xl text-center text-pink-600 font-extrabold p-4 font-serif">List of Employees</h1>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5  gap-10 border-4 border-pink-600 rounded-3xl">
         {emps.map((empObj) => (
           <div key={empObj._id} className=" bg-pink-600 text-amber-50 font-bold rounded-2xl p-3">
             <p>{empObj.email}</p>

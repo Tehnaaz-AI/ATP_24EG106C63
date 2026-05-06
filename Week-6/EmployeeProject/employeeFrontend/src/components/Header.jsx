@@ -4,8 +4,10 @@ import { useState } from "react";
 
 function Header() {
   return (
-    <nav className="flex justify-end text-3xl font-medium p-7 bg-pink-600 rounded-b-2xl text-white gap-6">
-      <NavLink to="" className={({ isActive }) => (isActive ? "text-purple-400" : "")}>
+    <div>
+    <nav className="flex justify-end text- font-medium p-5 text-2xl bg-pink-600  text-white gap-6">
+      
+      <NavLink to="/" className={({ isActive }) => (isActive ? "text-purple-400" : "")}>
         Home
       </NavLink>
       <NavLink to="create-emp" className={({ isActive }) => (isActive ? "text-blue-400" : "")}>
@@ -15,6 +17,7 @@ function Header() {
         Employees
       </NavLink>
     </nav>
+    </div>
   );
 }
 

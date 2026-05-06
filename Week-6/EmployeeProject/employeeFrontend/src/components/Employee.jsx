@@ -10,13 +10,13 @@ const [loading, setLoading] = useState(false);
 const [error, setError] = useState("");
 
   return (
-    <div className='p-5 pl-20 w-250 mx-auto border-4 bg-pink-600 text-white font-bold border-pink-600 rounded-2xl text-4xl'>
-      <h1 className='text-center pb-8 pt-0.5'>Employee Details</h1>
-      <p className='p-2'>Name: {state.name}</p>
-      <p className='p-2'>Email: {state.email}</p>
-      <p className='p-2'>Phone no: {state.mobile}</p>
-      <p className='p-2'>Designation: {state.designation}</p>
-      <p className='p-2'>Comapny Name: {state.companyName}</p>
+    <div className='p-5 pl-20 w-250 mx-auto border-4 bg-pink-600 text-white font-bold border-pink-600 rounded-2xl text-2xl'>
+      <h1 className='text-center pb-8 pt-0.5 font-serif text-3xl'>Employee Details</h1>
+      <p className='p-2 font-serif'>Name: {state.name}</p>
+      <p className='p-2 font-serif'>Email: {state.email}</p>
+      <p className='p-2 font-serif'>Phone no: {state.mobile}</p>
+      <p className='p-2 font-serif'>Designation: {state.designation}</p>
+      <p className='p-2 font-serif'>Comapny Name: {state.companyName}</p>
     </div>
   )
 }
