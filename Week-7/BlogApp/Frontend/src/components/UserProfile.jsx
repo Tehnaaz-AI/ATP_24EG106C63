@@ -100,13 +100,24 @@ function UserProfile() {
           </div>
         </div>
 
-        {/* LOGOUT */}
-        <button
-          className="bg-white text-fuchsia-800 text-sm px-5 py-2 rounded-full hover:bg-purple-100 transition"
-          onClick={onLogout}
-        >
-          Logout
-        </button>
+        {/* ACTION BUTTONS */}
+<div className="flex items-center gap-3">
+
+  <button
+    onClick={() => navigate("/change-password")}
+    className="bg-fuchsia-700 border border-white/20 text-white text-sm px-5 py-2 rounded-full hover:bg-fuchsia-600 transition shadow"
+  >
+    Change Password
+  </button>
+
+  <button
+    onClick={onLogout}
+    className="bg-white text-fuchsia-800 text-sm px-5 py-2 rounded-full hover:bg-purple-100 transition shadow"
+  >
+    Logout
+  </button>
+
+</div>
       </div>
 
       {/* ARTICLES SECTION */}

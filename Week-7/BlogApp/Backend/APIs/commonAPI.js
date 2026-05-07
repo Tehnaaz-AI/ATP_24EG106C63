@@ -12,10 +12,10 @@ import cloudinary from "../config/cloudinary.js";
 config();
 
 //Route for register
-commonApp.post("/users", upload.single("profileImageUrl"), async (req, res,next) => {
+commonApp.post("/users", upload.single("profileImageUrl"), async (req, res, next) => {
   let cloudinaryResult;
   try {
-    let allowedRoles = ["USER", "AUTHOR","ADMIN"];
+    let allowedRoles = ["USER", "AUTHOR", "ADMIN"];
     //get user from req
     const newUser = req.body;
     console.log(newUser);
@@ -95,7 +95,7 @@ commonApp.post("/login", async (req, res, next) => {
       { expiresIn: "1h" }
     );
 
-    // ✅ FIXED COOKIE
+
     res.cookie("token", signedToken, {
       httpOnly: true,
       secure: true,
@@ -136,12 +136,62 @@ commonApp.get("/check-auth", verifyToken("USER", "AUTHOR", "ADMIN"), (req, res) 
 });
 
 //Change password
-commonApp.put("/password", verifyToken("USER", "AUTHOR", "ADMIN"), async (req, res) => {
-  //check current password and new password are same
-  //get current password of user/admin/author
-  //check the current password of req and user are not same
-  // hash new password
-  //replace current password of user with hashed new password
-  //save
-  //send res
-});
+commonApp.put(
+  "/password",
+  verifyToken("USER", "AUTHOR", "ADMIN"),
+  async (req, res, next) => {
+    try {
+
+      const { currentPassword, newPassword } = req.body;
+
+      // get logged in user id from token
+      const userId = req.user.id;
+
+      // find user
+      const user = await UserModel.findById(userId);
+
+      // user not found
+      if (!user) {
+        return res.status(404).json({
+          message: "User not found",
+        });
+      }
+
+      // compare current password
+      const isMatched = await compare(currentPassword, user.password);
+
+      if (!isMatched) {
+        return res.status(400).json({
+          message: "Current password is incorrect",
+        });
+      }
+
+      // check old and new password are same
+      const isSamePassword = await compare(newPassword, user.password);
+
+      if (isSamePassword) {
+        return res.status(400).json({
+          message: "New password cannot be same as current password",
+        });
+      }
+
+      // hash new password
+      const hashedPassword = await hash(newPassword, 12);
+
+      // update password
+      user.password = hashedPassword;
+
+      // save user
+      await user.save();
+
+      // send response
+      res.status(200).json({
+        message: "Password updated successfully",
+      });
+
+    } catch (err) {
+      console.log("PASSWORD CHANGE ERROR:", err);
+      next(err);
+    }
+  }
+);

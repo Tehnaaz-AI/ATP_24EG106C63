@@ -17,6 +17,7 @@ import AdminProfile from "./components/AdminProfile";
 import UserList from "./components/UserList";
 import AuthorList from "./components/AuthorList";
 import Articles from "./components/Articles";
+import ChangePassword from "./components/ChangePassword";
 
 import { Toaster } from "react-hot-toast";
 
@@ -29,6 +30,7 @@ function App() {
         { index: true, element: <Home /> },
         { path: "register", element: <Register /> },
         { path: "login", element: <Login /> },
+        { path: "change-password", element: <ChangePassword /> },
 
         // USER
         { path: "user-profile", element: <UserProfile /> },

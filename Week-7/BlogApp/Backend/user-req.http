@@ -47,5 +47,3 @@ Content-Type: application/json
     "currentPassword":"User1",
     "newPassword":"User-1"
 }
-
-
