@@ -14,8 +14,8 @@ const app = exp();
 //enable cors
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://atp-24-eg-106-c63-y11o.vercel.app',
-  'https://atp-24-eg-106-c63-y11o-pq327rb14-24eg106c63-5169s-projects.vercel.app'
+  'https://blog-app.vercel.app',
+  'https://blog-app-pq327rb14-24eg106c63-5169s-projects.vercel.app'
 ];
 
 app.use(cors({
@@ -29,10 +29,10 @@ app.use(cookieParser())
 //body parser middleware
 app.use(exp.json());
 //path level middlewares
-app.use("/user-api",userApp);
-app.use("/author-api",authorApp);
-app.use("/admin-api",adminApp);
-app.use("/auth",commonApp);
+app.use("/user-api", userApp);
+app.use("/author-api", authorApp);
+app.use("/admin-api", adminApp);
+app.use("/auth", commonApp);
 
 //connect to db
 const connectDB = async () => {
@@ -57,7 +57,7 @@ app.use((req, res, next) => {
 
 //Error handling middleware
 app.use((err, req, res, next) => {
-  console.log("error is ",err)
+  console.log("error is ", err)
   console.log("Full error:", JSON.stringify(err, null, 2));
   //ValidationError
   if (err.name === "ValidationError") {
