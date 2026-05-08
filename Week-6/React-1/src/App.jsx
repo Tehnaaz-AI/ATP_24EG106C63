@@ -1,15 +1,10 @@
 // class component
 
 import './App.css'
-import Product from './components/Product';
-import User from './components/User';
+
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Test from './components/TestReference'
-import UserList from './components/UsersList'
-import Counter from './components/Counter'
-import APIDemo from "./components/APIDemo"
-import FormDemo from './components/FormDemo';
+
 import Details from './components/details';
 
 /*

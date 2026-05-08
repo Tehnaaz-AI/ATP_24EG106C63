@@ -12,7 +12,7 @@ export function verifyToken(req,res,next){
     }
     try{
     //if token is exists
-    const decodedToken=verify(token,'abcd')
+    const decodedToken=verify(token,process.env.SECRET_KEY)
     console.log(decodedToken)
     //attach decoded user to request
     req.user=decodedToken

@@ -1,7 +1,7 @@
 // class component
 
-/*import './App.css'
-import Product from './components/Product';
+import './App.css'
+import Product from './components/product';
 // function component
 function App(){
   // state
@@ -83,44 +83,21 @@ let products=[
 
   // return React element
   return(
-    <div className="m-20">  
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-red-400 ">
-        {/* nest product component }
+    <div className="mt-13 ml-15 mr-15 ">  
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* nest product component */}
         {
-          products.map(
-            product=>(<Product productObj={product} key={product.id}/>
+          products.map(product=>(<Product productObj={product} key={product.id}/>
         ))}
         {/* <Product productObj={products[0]}/>
         <Product productObj={products[1]}/>
         <Product productObj={products[2]}/>
         <Product productObj={products[3]}/>
         <Product productObj={products[4]}/>
-        <Product productObj={products[5]}/> }
+        <Product productObj={products[5]}/> */}
         </div>
     </div>
   );
 }
 
-export default App; */
-
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import UserList from './components/UsersList'
-
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <div className='m-16 min-h-screen'>
-        <UserList />
-      </div>
-
-      <Footer />
-    </div>
-  )
-}
-
-export default App
-
-
-
+export default App;

@@ -90,33 +90,167 @@ function ListOfEmp() {
   }
 
   return (
-    <div>
-      <div className="border-4 border-pink-600 p-4 w-70 rounded-3xl grid place-items-center mx-auto gap-4">
-      <h1 className="text-4xl">Counter1: {counter}</h1>
-      <button
-        onClick={changeCounter}
-        className="bg-amber-400 px-4 py-2 rounded-3xl font-serif font-bold"
+    <div className="py-8 px-4 overflow-hidden">
+  
+      {/* Counter Card */}
+      <div
+        className="
+          border-4 border-pink-600
+          bg-white shadow-2xl
+          p-6 w-80 rounded-[2rem]
+          grid place-items-center mx-auto gap-5
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-pink-300
+          transition-all duration-500
+        "
       >
-        Change
-      </button>
-    </div>
-      <h1 className="text-4xl text-center text-pink-600 font-extrabold p-4 font-serif">List of Employees</h1>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5  gap-10 border-4 border-pink-600 rounded-3xl">
+        <h1 className="text-4xl font-extrabold text-pink-600">
+          Counter1
+        </h1>
+  
+        <div className="text-6xl font-bold text-gray-800">
+          {counter}
+        </div>
+  
+        <button
+          onClick={changeCounter}
+          className="
+            bg-amber-400 text-black
+            px-6 py-3 rounded-full
+            font-serif font-bold text-lg
+            shadow-lg
+            hover:bg-amber-300
+            hover:scale-110
+            active:scale-95
+            transition-all duration-300
+          "
+        >
+          Change
+        </button>
+      </div>
+  
+      {/* Heading */}
+      <h1
+        className="
+          text-5xl text-center
+          text-pink-600 font-extrabold
+          p-8 font-serif
+          tracking-wide
+          drop-shadow-md
+        "
+      >
+        List of Employees
+      </h1>
+  
+      {/* Employee Grid */}
+      <div
+        className="
+          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+          gap-8
+          border-4 border-pink-600
+          rounded-[2rem]
+          bg-pink-50 shadow-2xl
+          p-8
+        "
+      >
         {emps.map((empObj) => (
-          <div key={empObj._id} className=" bg-pink-600 text-amber-50 font-bold rounded-2xl p-3">
-            <p>{empObj.email}</p>
-            <p>{empObj.name}</p>
-            <div className="flex justify-around pt-3">
-              <button onClick={() => getEmployee(empObj)} className="bg-white text-pink-600 rounded-2xl p-2">View</button>
-              <button onClick={() => gotoEditEmp(empObj)} className="bg-white text-pink-600 rounded-2xl p-2">Edit</button>
-              <button onClick={() => deleteEmp(empObj._id)} className="bg-white text-pink-600 rounded-2xl p-2">Delete</button>
-
+          <div
+            key={empObj._id}
+            className="
+              bg-gradient-to-br from-pink-500 to-pink-700
+              text-white font-bold
+              rounded-[2rem]
+              p-5
+              shadow-xl
+              hover:-translate-y-2
+              hover:scale-105
+              hover:shadow-pink-400
+              transition-all duration-500
+              w-full
+              max-w-[320px]
+              mx-auto
+            "
+          >
+            {/* Avatar */}
+            <div
+              className="
+                w-16 h-16 rounded-full
+                bg-white text-pink-600
+                flex items-center justify-center
+                text-2xl font-extrabold
+                shadow-lg mx-auto mb-4
+              "
+            >
+              {empObj.name?.charAt(0)}
+            </div>
+  
+            {/* Details */}
+            <div className="text-center">
+  
+              {/* Gmail in one line */}
+              <p className="text-[15px] whitespace-nowrap overflow-hidden text-ellipsis">
+                {empObj.email}
+              </p>
+  
+              <p className="text-2xl font-extrabold mt-3">
+                {empObj.name}
+              </p>
+            </div>
+  
+            {/* Buttons */}
+            <div className="flex justify-center gap-2 mt-5 flex-wrap">
+  
+              <button
+                onClick={() => getEmployee(empObj)}
+                className="
+                  bg-white text-pink-600
+                  rounded-2xl px-4 py-2
+                  font-bold shadow-md
+                  hover:bg-pink-100
+                  hover:scale-105
+                  active:scale-95
+                  transition-all duration-300
+                "
+              >
+                View
+              </button>
+  
+              <button
+                onClick={() => gotoEditEmp(empObj)}
+                className="
+                  bg-white text-pink-600
+                  rounded-2xl px-4 py-2
+                  font-bold shadow-md
+                  hover:bg-pink-100
+                  hover:scale-105
+                  active:scale-95
+                  transition-all duration-300
+                "
+              >
+                 Edit
+              </button>
+  
+              <button
+                onClick={() => deleteEmp(empObj._id)}
+                className="
+                  bg-white text-pink-600
+                  rounded-2xl px-4 py-2
+                  font-bold shadow-md
+                  hover:bg-red-200
+                  hover:text-red-700
+                  hover:scale-105
+                  active:scale-95
+                  transition-all duration-300
+                "
+              >
+                Delete
+              </button>
+  
             </div>
           </div>
         ))}
       </div>
     </div>
-  );
-}
+  );}
 
 export default ListOfEmp;

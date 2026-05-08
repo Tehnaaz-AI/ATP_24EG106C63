@@ -72,6 +72,14 @@ app.listen(port, ()=>console.log("server listening to port", port,"..."))
         res.json({message:"User deleted"})
     })
 
+    // Read all users
+        app.get('/users', (req, res) => {
+            res.json({
+                message: "All Users",
+                payload: users
+            })
+        })
+
 // Create product API with below operations
     // Create new Product({productId,name,brand,price})
     // Read all products

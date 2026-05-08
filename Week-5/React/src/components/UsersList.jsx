@@ -1,5 +1,7 @@
 import User from './User.jsx'
+
 function UserList() {
+
   let users = [
     {
       name: 'Aarav Sharma',
@@ -55,14 +57,21 @@ function UserList() {
 
   return (
     <>
-      <main>
-        <div className=" grid">
-          <div className="text-center grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 shadow-5xl rounded-4xl p-5 ">
-            {users.map((user) => (
-              <User userObj={user} key={user.email} />
-            ))}
-          </div>
+      <main className="min-h-screen bg-gradient-to-br from-slate-100 via-cyan-50 to-slate-200 py-12">
+
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
+
+          {users.map((user) => (
+            <div
+              key={user.email}
+              className="bg-white rounded-3xl shadow-lg p-6 transition duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-cyan-50"
+            >
+              <User userObj={user} />
+            </div>
+          ))}
+
         </div>
+
       </main>
     </>
   )
