@@ -1,16 +1,63 @@
-# React + Vite
+# Week 6 React App 2 README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React Form Handling Application
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Overview
 
-## React Compiler
+This React application focuses on form creation, controlled components, and input handling.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Form handling concepts were introduced in this project.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Technologies Used
+
+1. React.js
+
+2. JavaScript ES6
+
+3. JSX
+
+4. Tailwind CSS
+
+5. Vite
+
+---
+
+# Programs Included
+
+1. Form Components
+
+2. Input Handling
+
+3. Controlled Components
+
+4. Form Submission
+
+5. Dynamic Form Rendering
+
+---
+
+# New Concepts Introduced
+
+1. Controlled Components
+
+   Form elements controlled using React state.
+
+2. Form Handling
+
+   Managing user input and form submission in React.
+
+---
+
+# Learning Outcomes
+
+1. Working with forms in React
+
+2. Managing input state
+
+3. Handling form submissions
+
+4. Building interactive form interfaces

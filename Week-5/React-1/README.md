@@ -1,16 +1,87 @@
-# React + Vite
+# Week 5 React App 1 README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React Product Card Application using Props and Functional Components
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Overview
 
-## React Compiler
+This React application focuses on reusable component development using React.js. The project demonstrates props handling, JSX rendering, component based architecture, dynamic product rendering, responsive layouts, and Tailwind CSS styling.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React functional components and props were introduced in this application.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Technologies Used
+
+1. React.js
+
+2. JavaScript ES6
+
+3. JSX
+
+4. Tailwind CSS
+
+5. Vite
+
+6. Props
+
+7. Functional Components
+
+---
+
+# Programs Included
+
+1. Product Component
+
+2. Product Card UI
+
+3. Dynamic Product Rendering
+
+4. Props Handling
+
+5. Tailwind CSS Styling
+
+6. Responsive Grid Layout
+
+7. Hover Effects and Transitions
+
+8. React App Setup using Vite
+
+---
+
+# New Concepts Introduced
+
+1. Functional Components
+
+   Reusable JavaScript functions that return JSX.
+
+2. Props
+
+   Used to transfer data between React components.
+
+3. JSX
+
+   HTML like syntax used inside JavaScript.
+
+4. Tailwind CSS
+
+   Utility first CSS framework for fast styling.
+
+---
+
+# Learning Outcomes
+
+1. Understanding React component structure
+
+2. Passing data using props
+
+3. Building reusable UI components
+
+4. Rendering dynamic product data
+
+5. Using Tailwind CSS with React
+
+6. Creating responsive frontend layouts
+
+

@@ -1,16 +1,63 @@
-# React + Vite
+# Week 6 React App 1 README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React Counter and State Management Application
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Overview
 
-## React Compiler
+This React application demonstrates state management, event handling, and dynamic UI updates.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React state was introduced in this project.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Technologies Used
+
+1. React.js
+
+2. JavaScript ES6
+
+3. JSX
+
+4. Vite
+
+5. Tailwind CSS
+
+---
+
+# Programs Included
+
+1. Counter Application
+
+2. Event Handling
+
+3. State Updates
+
+4. Button Interactions
+
+5. Dynamic Rendering
+
+---
+
+# New Concepts Introduced
+
+1. useState Hook
+
+   React hook used for managing component state.
+
+2. Event Handling
+
+   Handling user interactions such as button clicks.
+
+---
+
+# Learning Outcomes
+
+1. Understanding React state management
+
+2. Handling user events
+
+3. Updating UI dynamically
+
+4. Building interactive applications

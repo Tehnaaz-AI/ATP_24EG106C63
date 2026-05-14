@@ -1,16 +1,65 @@
-# React + Vite
+# Week 6 React App 3 README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React Routing and Navigation Application
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Overview
 
-## React Compiler
+This React application demonstrates frontend routing and multi page navigation using React Router.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React Router was introduced in this project.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Technologies Used
+
+1. React.js
+
+2. React Router
+
+3. JavaScript ES6
+
+4. JSX
+
+5. Tailwind CSS
+
+6. Vite
+
+---
+
+# Programs Included
+
+1. Navigation Bar
+
+2. Route Configuration
+
+3. Multiple Pages
+
+4. Dynamic Navigation
+
+5. Responsive UI Design
+
+---
+
+# New Concepts Introduced
+
+1. React Router
+
+   Library used for navigation between pages in React applications.
+
+2. Routes and Links
+
+   Used for defining pages and navigation paths.
+
+---
+
+# Learning Outcomes
+
+1. Understanding frontend routing
+
+2. Creating multi page React applications
+
+3. Navigating using React Router
+
+4. Structuring React applications efficiently

@@ -1,16 +1,92 @@
-# React + Vite
+# Week 5 React App README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React User Management UI using Components and Props
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Overview
 
-## React Compiler
+This React application demonstrates component composition, reusable UI creation, props usage, list rendering using map(), and responsive frontend design.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project includes Navbar, Footer, User Card, and User List components styled using Tailwind CSS.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Technologies Used
+
+1. React.js
+
+2. JavaScript ES6
+
+3. JSX
+
+4. Tailwind CSS
+
+5. Vite
+
+6. Props
+
+7. Functional Components
+
+8. Array map()
+
+---
+
+# Programs Included
+
+1. Navbar Component
+
+2. Footer Component
+
+3. User Component
+
+4. User List Component
+
+5. Dynamic User Rendering
+
+6. Props Handling
+
+7. Responsive Grid Layout
+
+8. Tailwind CSS Styling
+
+9. Hover Animations
+
+10. React App Rendering using createRoot()
+
+---
+
+# New Concepts Introduced
+
+1. Component Composition
+
+   Combining multiple React components into a single application.
+
+2. Array map()
+
+   Used for rendering lists dynamically in React.
+
+3. createRoot()
+
+   Modern React rendering method introduced in React 18.
+
+4. Responsive UI Design
+
+   Creating layouts adaptable for different screen sizes.
+
+---
+
+# Learning Outcomes
+
+1. Building modular React applications
+
+2. Rendering lists dynamically
+
+3. Creating reusable frontend components
+
+4. Working with props and JSX
+
+5. Understanding React rendering flow
+
+6. Designing responsive interfaces using Tailwind CSS
+
